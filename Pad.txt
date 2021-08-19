@@ -1,12 +1,9 @@
-#NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
+;;#NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
 #Warn  ; Enable warnings to assist with detecting common errors.
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
-
-; AHK Command       ; key   = Effect        (Description)
-
-; ALT Keypress Implied for all below
+#If, GetKeyState("ScrollLock", "T") ;Your CapsLock hotkeys go below
 
 !i::Send {UP}
 !k::Send {DOWN}
@@ -17,8 +14,7 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 !p::Send {PgUp}
 !`;::Send {PgDn}
 
-
-; CTRL + ALT Keypress Implied for all below
+; CTRL
 !^i::Send ^{UP}
 !^k::Send ^{DOWN}
 !^j::Send ^{LEFT}
@@ -26,7 +22,7 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 !^p::Send ^{PgUp}
 !^`;::Send ^{PgDn}
 
-; SHIFT + ALT Keypress Implied for all below
+; SHIFT
 !+i::Send +{UP}
 !+k::Send +{DOWN}
 !+j::Send +{LEFT}
@@ -37,16 +33,12 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 !+`;::Send +{PgDn}
 
 
-; SHIFT + CTRL + ALT Keypress Implied for all below
+; SHIFT + CTRL
 !+^i::Send +!{UP}
 !+^k::Send +!{DOWN}
 !+^j::Send +^{LEFT}
 !+^l::Send +^{RIGHT}
 
+#If
 
-; CTRL + SHIFT Keypress Implied for all below
-+^i::Send +^{UP}
-+^k::Send +^{DOWN}
-+^j::Send +^{LEFT}
-+^l::Send +^{RIGHT}
-
+F5::Reload
