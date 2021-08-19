@@ -42,3 +42,88 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 #If
 
 F5::Reload
+
+
+#NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
+#Warn  ; Enable warnings to assist with detecting common errors.
+SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
+SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
+
+#If, GetKeyState("CapsLock", "T") ;Your CapsLock hotkeys go below
+
+i::Send {UP}          ; i UP          (Cursor up line)
+k::Send {DOWN}        ; k DOWN        (Cursor down line)
+j::Send {LEFT}        ; j LEFT        (Cursor left one character)
+l::Send {RIGHT}       ; l RIGHT       (Cursor right one character)
+
+; CTRL
+^i::Send ^{UP}
+^k::Send ^{DOWN}
+^j::Send ^{LEFT}
+^l::Send ^{RIGHT}
+
+; ALT
+!i::Send !{UP}
+!k::Send !{DOWN}
+!j::Send !{LEFT}
+!l::Send !{RIGHT}
+
+; SHIFT
++i::Send +{UP}
++k::Send +{DOWN}
++j::Send +{LEFT}
++l::Send +{RIGHT}
+
+; SHIFT + CTRL
++^i::Send +^{UP}
++^k::Send +^{DOWN}
++^j::Send +^{LEFT}
++^l::Send +^{RIGHT}
+
+; ===INACTIVE===
+
+; ALT + CTRL
+; !^i::Send !^{UP}
+; !^k::Send !^{DOWN}
+; !^j::Send !^{LEFT}
+; !^l::Send !^{RIGHT}
+
+; ALT + SHIFT
+; !+i::Send !+{UP}
+; !+k::Send !+{DOWN}
+; !+j::Send !+{LEFT}
+; !+l::Send !+{RIGHT}
+
+; ALT + CTRL + SHIFT
+; +!^i::Send +!^{UP}
+; +!^k::Send +!^{DOWN}
+; +!^j::Send +!^{LEFT}
+; +!^l::Send +!^{RIGHT}
+
+;disable the rest of the keys
+a::return
+b::return
+c::return
+d::return
+e::return
+f::return
+g::return
+m::return
+n::return
+o::return
+p::return
+q::return
+r::return
+s::return
+t::return
+u::return
+v::return
+w::return
+x::return
+y::return
+z::return
+
+#If
+
+F5::Reload
+
