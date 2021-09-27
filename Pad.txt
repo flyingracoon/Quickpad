@@ -57,16 +57,16 @@ j::Send {LEFT}        ; j LEFT        (Cursor left one character)
 l::Send {RIGHT}       ; l RIGHT       (Cursor right one character)
 u::Send {HOME}
 o::Send {END}
-p::Send {PgUp}
-`;::Send {PgDn}
+y::Send {PgUp}
+h::Send {PgDn}
 
 ; CTRL
 ^i::Send ^{UP}
 ^k::Send ^{DOWN}
 ^j::Send ^{LEFT}
 ^l::Send ^{RIGHT}
-^p::Send ^{PgUp}
-^`;::Send ^{PgDn}
+^y::Send ^{PgUp}
+^h::Send ^{PgDn}
 
 ; ALT
 !i::Send !{UP}
@@ -81,8 +81,8 @@ p::Send {PgUp}
 +l::Send +{RIGHT}
 +u::Send +{HOME}
 +o::Send +{END}
-+p::Send +{PgUp}
-+`;::Send +{PgDn}
++y::Send +{PgUp}
++h::Send +{PgDn}
 
 ; SHIFT + CTRL
 +^i::Send +^{UP}
@@ -104,6 +104,7 @@ p::Send {PgUp}
 ; !+j::Send !+{LEFT}
 ; !+l::Send !+{RIGHT}
 
+
 ; ALT + CTRL + SHIFT
 ; +!^i::Send +!^{UP}
 ; +!^k::Send +!^{DOWN}
@@ -120,6 +121,7 @@ f::return
 g::return
 m::return
 n::return
+p::return
 q::return
 r::return
 s::return
@@ -127,11 +129,7 @@ t::return
 v::return
 w::return
 x::return
-y::return
 z::return
 
 #If
-
-F5::Reload
-
 
