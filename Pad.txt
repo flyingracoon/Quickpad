@@ -1,116 +1,223 @@
-;;#NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
-#Warn  ; Enable warnings to assist with detecting common errors.
-SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
-SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
-
-#If, GetKeyState("ScrollLock", "T") ;Your CapsLock hotkeys go below
-
-!i::Send {UP}
-!k::Send {DOWN}
-!j::Send {LEFT}
-!l::Send {RIGHT}
-!u::Send {HOME}
-!o::Send {END}
-!p::Send {PgUp}
-!`;::Send {PgDn}
-
-; CTRL
-!^i::Send ^{UP}
-!^k::Send ^{DOWN}
-!^j::Send ^{LEFT}
-!^l::Send ^{RIGHT}
-!^p::Send ^{PgUp}
-!^`;::Send ^{PgDn}
-
-; SHIFT
-!+i::Send +{UP}
-!+k::Send +{DOWN}
-!+j::Send +{LEFT}
-!+l::Send +{RIGHT}
-!+u::Send +{HOME}
-!+o::Send +{END}
-!+p::Send +{PgUp}
-!+`;::Send +{PgDn}
-
-
-; SHIFT + CTRL
-!+^i::Send +!{UP}
-!+^k::Send +!{DOWN}
-!+^j::Send +^{LEFT}
-!+^l::Send +^{RIGHT}
-
-#If
-
-F5::Reload
-
-
 #NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
 #Warn  ; Enable warnings to assist with detecting common errors.
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
+
+
+$i::
+if GetKeyState("CapsLock", "T")
+    Send {UP}
+else
+    Send i
+return
+
+$k::
+if GetKeyState("CapsLock", "T")
+    Send {DOWN}
+else
+    Send k
+return
+
+$j::
+if GetKeyState("CapsLock", "T")
+    Send {LEFT}
+else
+    Send j
+return
+
+$l::
+if GetKeyState("CapsLock", "T")
+    Send {RIGHT}
+else
+    Send l
+return
+
+$u::
+if GetKeyState("CapsLock", "T")
+    Send {HOME}
+else
+    Send u
+return
+
+$o::
+if GetKeyState("CapsLock", "T")
+    Send {END}
+else
+    Send o
+return
+
+$y::
+if GetKeyState("CapsLock", "T")
+    Send {PgUp}
+else
+    Send y
+return
+
+$h::
+if GetKeyState("CapsLock", "T")
+    Send {PgDn}
+else
+    Send h
+return
+;===CTRL===
+$^i::
+if GetKeyState("CapsLock", "T")
+    Send ^{UP}
+else
+    Send ^i
+return
+
+$^k::
+if GetKeyState("CapsLock", "T")
+    Send ^{DOWN}
+else
+    Send ^k
+return
+
+$^j::
+if GetKeyState("CapsLock", "T")
+    Send ^{LEFT}
+else
+    Send ^j
+return
+
+$^l::
+if GetKeyState("CapsLock", "T")
+    Send ^{RIGHT}
+else
+    Send ^l
+return
+
+$^y::
+if GetKeyState("CapsLock", "T")
+    Send ^{PgUp}
+else
+    Send ^y
+return
+
+$^h::
+if GetKeyState("CapsLock", "T")
+    Send ^{PgDn}
+else
+    Send ^h
+return
+;===ALT===
+$!i::
+if GetKeyState("CapsLock", "T")
+    Send !{UP}
+else
+    Send !i
+return
+
+$!k::
+if GetKeyState("CapsLock", "T")
+    Send !{DOWN}
+else
+    Send !k
+return
+
+$!j::
+if GetKeyState("CapsLock", "T")
+    Send !{LEFT}
+else
+    Send !j
+return
+
+$!l::
+if GetKeyState("CapsLock", "T")
+    Send !{RIGHT}
+else
+    Send !l
+return
+;===SHIFT===
+$+i::
+if GetKeyState("CapsLock", "T")
+    Send +{UP}
+else
+    Send +i
+return
+
+$+k::
+if GetKeyState("CapsLock", "T")
+    Send +{DOWN}
+else
+    Send +k
+return
+
+$+j::
+if GetKeyState("CapsLock", "T")
+    Send +{LEFT}
+else
+    Send +j
+return
+
+$+l::
+if GetKeyState("CapsLock", "T")
+    Send +{RIGHT}
+else
+    Send +l
+return
+
+$+u::
+if GetKeyState("CapsLock", "T")
+    Send +{HOME}
+else
+    Send +u
+return
+
+$+o::
+if GetKeyState("CapsLock", "T")
+    Send +{END}
+else
+    Send +o
+return
+
+$+y::
+if GetKeyState("CapsLock", "T")
+    Send +{PgUp}
+else
+    Send +y
+return
+
+$+h::
+if GetKeyState("CapsLock", "T")
+    Send +{PgDn}
+else
+    Send +h
+return
+
+
+;===SHIFT + CTRL===
+$+^i::
+if GetKeyState("CapsLock", "T")
+    Send +^{UP}
+else
+    Send +^i
+return
+
+$+^k::
+if GetKeyState("CapsLock", "T")
+    Send +^{DOWN}
+else
+    Send +^k
+return
+
+$+^j::
+if GetKeyState("CapsLock", "T")
+    Send +^{LEFT}
+else
+    Send +^j
+return
+
+$+^l::
+if GetKeyState("CapsLock", "T")
+    Send +^{RIGHT}
+else
+    Send +^l
+return
+
 #If, GetKeyState("CapsLock", "T") ;Your CapsLock hotkeys go below
-
-i::Send {UP}          ; i UP          (Cursor up line)
-k::Send {DOWN}        ; k DOWN        (Cursor down line)
-j::Send {LEFT}        ; j LEFT        (Cursor left one character)
-l::Send {RIGHT}       ; l RIGHT       (Cursor right one character)
-u::Send {HOME}
-o::Send {END}
-y::Send {PgUp}
-h::Send {PgDn}
-
-; CTRL
-^i::Send ^{UP}
-^k::Send ^{DOWN}
-^j::Send ^{LEFT}
-^l::Send ^{RIGHT}
-^y::Send ^{PgUp}
-^h::Send ^{PgDn}
-
-; ALT
-!i::Send !{UP}
-!k::Send !{DOWN}
-!j::Send !{LEFT}
-!l::Send !{RIGHT}
-
-; SHIFT
-+i::Send +{UP}
-+k::Send +{DOWN}
-+j::Send +{LEFT}
-+l::Send +{RIGHT}
-+u::Send +{HOME}
-+o::Send +{END}
-+y::Send +{PgUp}
-+h::Send +{PgDn}
-
-; SHIFT + CTRL
-+^i::Send +^{UP}
-+^k::Send +^{DOWN}
-+^j::Send +^{LEFT}
-+^l::Send +^{RIGHT}
-
-; ===INACTIVE===
-
-; ALT + CTRL
-; !^i::Send !^{UP}
-; !^k::Send !^{DOWN}
-; !^j::Send !^{LEFT}
-; !^l::Send !^{RIGHT}
-
-; ALT + SHIFT
-; !+i::Send !+{UP}
-; !+k::Send !+{DOWN}
-; !+j::Send !+{LEFT}
-; !+l::Send !+{RIGHT}
-
-
-; ALT + CTRL + SHIFT
-; +!^i::Send +!^{UP}
-; +!^k::Send +!^{DOWN}
-; +!^j::Send +!^{LEFT}
-; +!^l::Send +!^{RIGHT}
-
 ;disable the rest of the keys
 a::return
 b::return
@@ -132,4 +239,3 @@ x::return
 z::return
 
 #If
-
