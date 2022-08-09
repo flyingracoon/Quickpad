@@ -5,183 +5,191 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 SetStoreCapslockMode, Off
 
-$i::
-if GetKeyState("CapsLock", "T")
+caps :=%caps%
+
+~capslock::
+caps :=%caps%
+return
+
+
+$I::
+if %caps%
     Send {UP}
 else
     Send i
 return
 
-$k::
-if GetKeyState("CapsLock", "T")
+
+$K::
+if %caps%
     Send {DOWN}
 else
     Send k
 return
 
-$j::
-if GetKeyState("CapsLock", "T")
+$J::
+if %caps%
     Send {LEFT}
 else
     Send j
 return
 
-$l::
-if GetKeyState("CapsLock", "T")
+$L::
+if %caps%
     Send {RIGHT}
 else
     Send l
 return
 
 $u::
-if GetKeyState("CapsLock", "T")
+if %caps%
     Send {HOME}
 else
     Send u
 return
 
 $o::
-if GetKeyState("CapsLock", "T")
+if %caps%
     Send {END}
 else
     Send o
 return
 
 $y::
-if GetKeyState("CapsLock", "T")
+if %caps%
     Send {PgUp}
 else
     Send y
 return
 
 $h::
-if GetKeyState("CapsLock", "T")
+if %caps%
     Send {PgDn}
 else
     Send h
 return
 ;===CTRL===
 $^i::
-if GetKeyState("CapsLock", "T")
+if %caps%
     Send ^{UP}
 else
     Send ^i
 return
 
 $^k::
-if GetKeyState("CapsLock", "T")
+if %caps%
     Send ^{DOWN}
 else
     Send ^k
 return
 
 $^j::
-if GetKeyState("CapsLock", "T")
+if %caps%
     Send ^{LEFT}
 else
     Send ^j
 return
 
 $^l::
-if GetKeyState("CapsLock", "T")
+if %caps%
     Send ^{RIGHT}
 else
     Send ^l
 return
 
 $^y::
-if GetKeyState("CapsLock", "T")
+if %caps%
     Send ^{PgUp}
 else
     Send ^y
 return
 
 $^h::
-if GetKeyState("CapsLock", "T")
+if %caps%
     Send ^{PgDn}
 else
     Send ^h
 return
 ;===ALT===
 $!i::
-if GetKeyState("CapsLock", "T")
+if %caps%
     Send !{UP}
 else
     Send !i
 return
 
 $!k::
-if GetKeyState("CapsLock", "T")
+if %caps%
     Send !{DOWN}
 else
     Send !k
 return
 
 $!j::
-if GetKeyState("CapsLock", "T")
+if %caps%
     Send !{LEFT}
 else
     Send !j
 return
 
 $!l::
-if GetKeyState("CapsLock", "T")
+if %caps%
     Send !{RIGHT}
 else
     Send !l
 return
 ;===SHIFT===
 $+i::
-if GetKeyState("CapsLock", "T")
+if %caps%
     Send +{UP}
 else
     Send +i
 return
 
 $+k::
-if GetKeyState("CapsLock", "T")
+if %caps%
     Send +{DOWN}
 else
     Send +k
 return
 
 $+j::
-if GetKeyState("CapsLock", "T")
+if %caps%
     Send +{LEFT}
 else
     Send +j
 return
 
 $+l::
-if GetKeyState("CapsLock", "T")
+if %caps%
     Send +{RIGHT}
 else
     Send +l
 return
 
 $+u::
-if GetKeyState("CapsLock", "T")
+if %caps%
     Send +{HOME}
 else
     Send +u
 return
 
 $+o::
-if GetKeyState("CapsLock", "T")
+if %caps%
     Send +{END}
 else
     Send +o
 return
 
 $+y::
-if GetKeyState("CapsLock", "T")
+if %caps%
     Send +{PgUp}
 else
     Send +y
 return
 
 $+h::
-if GetKeyState("CapsLock", "T")
+if %caps%
     Send +{PgDn}
 else
     Send +h
@@ -190,34 +198,34 @@ return
 
 ;===SHIFT + CTRL===
 $+^i::
-if GetKeyState("CapsLock", "T")
+if %caps%
     Send +^{UP}
 else
     Send +^i
 return
 
 $+^k::
-if GetKeyState("CapsLock", "T")
+if %caps%
     Send +^{DOWN}
 else
     Send +^k
 return
 
 $+^j::
-if GetKeyState("CapsLock", "T")
+if %caps%
     Send +^{LEFT}
 else
     Send +^j
 return
 
 $+^l::
-if GetKeyState("CapsLock", "T")
+if %caps%
     Send +^{RIGHT}
 else
     Send +^l
 return
 
-#If, GetKeyState("CapsLock", "T") ;Your CapsLock hotkeys go below
+#If, %caps% ;Your CapsLock hotkeys go below
 ;disable the rest of the keys
 a::return
 b::return
