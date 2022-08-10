@@ -5,14 +5,14 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 SetStoreCapslockMode, Off
 
-caps :=%caps%
+caps :=GetKeyState("CapsLock", "T")
 
 ~capslock::
-caps :=%caps%
+caps :=GetKeyState("CapsLock", "T")
 return
 
 
-$I::
+$i::
 if %caps%
     Send {UP}
 else
@@ -20,21 +20,21 @@ else
 return
 
 
-$K::
+$k::
 if %caps%
     Send {DOWN}
 else
     Send k
 return
 
-$J::
+$j::
 if %caps%
     Send {LEFT}
 else
     Send j
 return
 
-$L::
+$l::
 if %caps%
     Send {RIGHT}
 else
